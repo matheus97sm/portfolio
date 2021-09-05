@@ -1,0 +1,42 @@
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 999;
+}
+
+.menu-hamb {
+  padding: 16px 8px;
+  justify-self: flex-end;
+  cursor: pointer;
+
+  span, 
+  &::after {
+    display: block;
+    width: 32px;
+    height: 3px;
+    background-color: #fff;
+    transition: 1s transform;
+  }
+
+  &::after {
+    content: '';
+    width: 60%;
+    margin-top: 6px;
+    transform: translate3d(61%, 0 ,0);
+  }
+
+  &.active {
+    span {
+      transform: translate3d(0, 4px, 0) rotate(-45deg);
+    }
+
+    &::after {
+      transform: translate3d(0, -5px, 0) rotate(45deg);
+    }
+  }
+}

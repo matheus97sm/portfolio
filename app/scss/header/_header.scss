@@ -1,0 +1,29 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 999;
+
+  .container {
+    padding: 16px 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+  }
+}
+
+.header-midias {  
+  svg {
+    width: 16px;
+    height: 16px;
+    margin-right: 16px;
+    fill: #fff;
+  }
+}
+
+.header-logo {
+  justify-self: center;
+}
+
+@import './menu';

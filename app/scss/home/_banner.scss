@@ -1,0 +1,43 @@
+.home-banner {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  
+  background: linear-gradient(
+    17deg, 
+    #171129 0%, 
+    #17113A 9%,
+    #171154 18%, 
+    #131313 22%, 
+    #131313 38%,
+    #1A000E 42%, 
+    #240014 49%, 
+    #51002C 58%,
+    #000D1A 62%, 
+    #001D3A 69%, 
+    #002B57 78%,
+    #13001A 82%, 
+    #22002E 89%, 
+    #43005B 100%
+  ) 0% 0% no-repeat;
+  background-position: 0% 100%;
+  background-size: 2000% 2000%;
+
+  transition: 4s background-position;
+}
+
+.home-banner-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  .container {
+    height: 100%;
+  }
+}
+
+@import './bannerControls'
+;

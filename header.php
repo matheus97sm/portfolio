@@ -29,6 +29,7 @@
   <link rel="icon" type="image/png" href="<?=get_template_directory_URI()?>/img/favicon.png" />
   <link rel="profile" href="http://gmpg.org/xfn/11">
   <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="<?=get_template_directory_URI()?>/style.css" />
 
@@ -50,7 +51,31 @@
   </script>
 
   <header class="header">
-    <div>
-      <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu', 'menu_id' => 'primary-menu' ) ); ?>
+    <div class="container">
+      <div class="header-midias">
+        <a href="https://instagram.com/matheusfonsecadev" target="_blank">
+          <svg width="32" height="32" viewBox="0 0 32 32">
+            <use xlink:href="#instagram"></use>
+          </svg>
+        </a>
+        
+        <a href="https://wa.me/+5531993119471" target="_blank">
+          <svg width="32" height="32" viewBox="0 0 32 32">
+            <use xlink:href="#whatsapp"></use>
+          </svg>
+        </a>
+      </div>
+
+      <a href="<?=site_url()?>" class="header-logo">
+        <img src="<?=get_template_directory_URI()?>/img/src/logo.svg'" alt="Matheus Fonseca - Desenvolvedor Web" />
+      </a>
+
+      <div class="menu-hamb">
+        <span></span>
+      </div>
     </div>
+
+    <nav class="menu">
+      <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu' => 'MenuTopo', 'menu_class' => 'nav-menu', 'menu_id' => 'primary-menu' ) ); ?>
+    </nav>
   </header>

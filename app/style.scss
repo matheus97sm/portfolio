@@ -4,6 +4,11 @@
   box-sizing: border-box;
   outline: none;
   -webkit-font-smoothing: antialiased;
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
+}
+
+body {
+  font-size: 16px;
 }
 
 ul,
@@ -16,6 +21,19 @@ a {
   text-decoration: none;
 }
 
+p, 
+li {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.container {
+  width: 95%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
 @import './scss/header/header';
+@import './scss/home';
 @import './scss/footer/footer';
 @import './animation';

@@ -1,0 +1,126 @@
+.banner-welcome {
+  .container {
+    padding-bottom: 140px;
+    display: flex;
+    align-items: flex-end;
+
+    h1 {
+      position: relative;
+      color: #ACA7DF;
+      font-size: 84px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: #ACA7DF;
+        transform: translate3d(0, -50%, 0);
+      }
+
+      > span {
+        display: block;
+        overflow: hidden;
+
+        span {
+          display: block;
+          transform: translate3d(0, 100%, 0);
+          transition: 1.3s transform ease-out;
+          transition-delay: 1s;
+        }
+
+        &:nth-of-type(2) span {
+          transform: translate3d(0, -100%, 0);
+        }
+      }
+    }
+
+    p {
+      color: #665DBB;
+      max-width: 480px;
+      opacity: 0;
+      transform: translate3d(0, 50%, 0);
+    }
+  }
+
+  &.active .container {
+    h1 {
+      &::before {
+        animation: 3s animateLine ease-in-out;
+      }
+
+      > span {
+        span {
+          transform: translate3d(0, 0, 0);
+        }
+    
+        &:nth-of-type(2) span {
+          transform: translate3d(0, 0, 0);
+        }
+      }
+    }
+
+    p {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+      transition: 1.5s transform, 1.5s opacity;
+      transition-timing-function: ease-out;
+      transition-delay: 2s;
+    }
+  }
+
+  &.inactive {
+    opacity: 0;
+    visibility: hidden;
+    transition-delay: 3s;
+
+    .container {
+      h1::before {
+        animation: 3s ReanimateLine ease-in-out;
+      }
+
+      p {
+        opacity: 0;
+        transform: translate3d(0, 50%, 0);
+        transition: 1.5s transform, 1.5s opacity;
+        transition-timing-function: ease-out;
+      }
+    }
+  }
+}
+
+@keyframes animateLine {
+  0% {
+    width: 0%;
+    left: 0;
+  }
+  
+  40%, 70% {
+    width: 130%;
+    left: 0;
+  }
+
+  100% {
+    width: 0%;
+    left: 130%;
+  }
+}
+
+@keyframes ReanimateLine {
+  0% {
+    width: 0%;
+    left: 130%;
+  }
+  
+  30%, 60% {
+    width: 130%;
+    left: 0;
+  }
+
+  100% {
+    width: 0%;
+    left: 0;
+  }  
+}
