@@ -47,6 +47,9 @@ li {
 
 .header-logo {
   justify-self: center; }
+  .header-logo img {
+    user-select: none;
+    -webkit-user-drag: none; }
 
 .menu {
   position: fixed;
@@ -104,7 +107,8 @@ li {
   display: grid;
   justify-items: flex-end;
   gap: 12px;
-  transform: translate3d(0, -50%, 0); }
+  transform: translate3d(0, -50%, 0);
+  z-index: 999; }
 
 .banner-control-wrapper {
   display: flex;
@@ -166,7 +170,8 @@ li {
   .banner-welcome .container h1 {
     position: relative;
     color: #ACA7DF;
-    font-size: 84px; }
+    font-size: 84px;
+    user-select: none; }
     .banner-welcome .container h1::before {
       content: '';
       position: absolute;
@@ -190,7 +195,8 @@ li {
     color: #665DBB;
     max-width: 480px;
     opacity: 0;
-    transform: translate3d(0, 50%, 0); }
+    transform: translate3d(0, 50%, 0);
+    user-select: none; }
 
 .banner-welcome.active .container h1::before {
   animation: 3s animateLine ease-in-out; }
@@ -316,15 +322,140 @@ li {
 .banner-projetos {
   opacity: 0;
   visibility: hidden; }
+  .banner-projetos .banner-projetos-wrapper {
+    position: relative;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr 260px minmax(220px, 1fr); }
+  .banner-projetos .banner-projetos-items {
+    position: relative;
+    height: 100%;
+    display: flex;
+    z-index: 99; }
+  .banner-projetos .projetos-item {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 100%;
+    cursor: pointer;
+    z-index: -1;
+    transform: translate3d(-30%, -50%, 0) scale(0.85);
+    filter: blur(1px);
+    transition: 1s transform, 1s filter;
+    transition-timing-function: ease-out;
+    perspective: 335px; }
+    .banner-projetos .projetos-item:hover {
+      filter: blur(0) !important; }
+      .banner-projetos .projetos-item:hover a::after {
+        opacity: 0 !important; }
+    .banner-projetos .projetos-item.first {
+      z-index: 1;
+      filter: blur(0);
+      transform: translate3d(0, -50%, 0) scale(1); }
+      .banner-projetos .projetos-item.first a::after {
+        opacity: 0; }
+    .banner-projetos .projetos-item.second {
+      z-index: -1;
+      transform: translate3d(70%, -50%, 0) scale(0.85);
+      filter: blur(1px); }
+      .banner-projetos .projetos-item.second a::after {
+        opacity: .5; }
+    .banner-projetos .projetos-item.third {
+      z-index: -2;
+      transform: translate3d(130%, -50%, 0) scale(0.7);
+      filter: blur(2px); }
+      .banner-projetos .projetos-item.third a::after {
+        opacity: .75; }
+    .banner-projetos .projetos-item a {
+      position: relative;
+      display: flex;
+      width: 100%;
+      height: 100%;
+      transition: 1s transform; }
+      .banner-projetos .projetos-item a:hover {
+        transform: rotateX(0deg) rotateY(-4deg);
+        transform-style: preserve-3d; }
+      .banner-projetos .projetos-item a::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #1A000E;
+        opacity: .5;
+        transition: 1s opacity ease-out;
+        pointer-events: none; }
+      .banner-projetos .projetos-item a img {
+        height: 260px;
+        width: 420px;
+        object-fit: cover; }
+    .banner-projetos .projetos-item .projetos-item-text {
+      display: none; }
+  .banner-projetos .banner-projetos-text {
+    padding-top: 8px;
+    max-width: 420px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translate3d(0, 32px, 0); }
+    .banner-projetos .banner-projetos-text h2 {
+      color: #fff;
+      font-size: 32px;
+      margin-top: 8px; }
+    .banner-projetos .banner-projetos-text span {
+      width: fit-content;
+      padding: 2px 8px;
+      color: #fff;
+      font-size: 11px;
+      background-color: #6A0039;
+      border-radius: 32px; }
+    .banner-projetos .banner-projetos-text p {
+      color: #9C777D;
+      margin-bottom: 16px; }
+    .banner-projetos .banner-projetos-text a {
+      display: flex;
+      align-items: center;
+      color: #fff; }
+      .banner-projetos .banner-projetos-text a img {
+        margin-left: 16px;
+        width: 42px;
+        transition: .5s transform ease-out; }
+      .banner-projetos .banner-projetos-text a:hover img {
+        transform: translate3d(16px, 0, 0); }
+  .banner-projetos .banner-projetos-controls {
+    position: absolute;
+    top: calc(50% + 160px);
+    left: 790px;
+    transform: translate3d(0, -50%, 0); }
+    .banner-projetos .banner-projetos-controls button {
+      background-color: transparent;
+      padding: 8px 24px;
+      border: none;
+      cursor: pointer; }
+      .banner-projetos .banner-projetos-controls button:hover {
+        opacity: 0.8; }
   .banner-projetos.active {
     opacity: 1;
     visibility: visible;
     transition: 3s opacity, 3s visibility;
     transition-delay: 1.5s; }
+    .banner-projetos.active .banner-projetos-text {
+      opacity: 1;
+      visibility: visible;
+      transform: translate3d(0, 0, 0);
+      transition: 1.5s opacity, 1.5s visibility, 1.5s transform;
+      transition-timing-function: ease-out;
+      transition-delay: 1.5s; }
   .banner-projetos.inactive {
     opacity: 0;
     visibility: hidden;
     transition: 3s opacity, 3s visibility; }
+    .banner-projetos.inactive .banner-projetos-text {
+      opacity: 0;
+      visibility: hidden;
+      transform: translate3d(0, 32px, 0);
+      transition-timing-function: ease-out;
+      transition: 1.5s opacity, 1.5s visibility, 1.5s transform; }
 
 .banner-blog {
   opacity: 0;

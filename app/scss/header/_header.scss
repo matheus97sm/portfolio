@@ -24,6 +24,11 @@
 
 .header-logo {
   justify-self: center;
+  
+  img {
+    user-select: none;
+    -webkit-user-drag: none;
+  }
 }
 
 @import './menu';

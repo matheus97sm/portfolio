@@ -1,6 +1,5 @@
 export function manageBanners(bannerWrapper, banners, actualBanner, bannerControls) {
-  const gradientPositionX = actualBanner === 0 ? 0 : actualBanner * 25;
-  const gradientPositionY = actualBanner === 0 ? 0 : actualBanner * 25;
+  const gradientPosition = actualBanner === 0 ? 0 : actualBanner * 25;
 
   banners.forEach((banner, index) => {
     banner.classList.remove('active');
@@ -14,7 +13,7 @@ export function manageBanners(bannerWrapper, banners, actualBanner, bannerContro
         banner.classList.remove('inactive');
         banner.classList.add('active');
 
-        bannerWrapper.style.setProperty('background-position', `${gradientPositionY}% ${100 - gradientPositionY}%`);
+        bannerWrapper.style.setProperty('background-position', `${gradientPosition}% ${100 - gradientPosition}%`);
       }, 3000);
     }
   });

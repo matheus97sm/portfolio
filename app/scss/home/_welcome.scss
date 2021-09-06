@@ -8,6 +8,7 @@
       position: relative;
       color: #ACA7DF;
       font-size: 84px;
+      user-select: none;
 
       &::before {
         content: '';
@@ -42,6 +43,7 @@
       max-width: 480px;
       opacity: 0;
       transform: translate3d(0, 50%, 0);
+      user-select: none;
     }
   }
 
