@@ -73,7 +73,7 @@ function has_children() {
 
 function catch_that_image($sizex) {
   global $post, $posts;
-  $urldosite = get_site_url();
+  $urldosite = get_template_directory_URI();
   $first_img = "";
   ob_start();
   ob_end_clean();
@@ -105,7 +105,7 @@ function catch_that_image($sizex) {
 		
 		if (!$first_img)
 		{
- 			$first_img = "$urldosite/img/branco.png";
+ 			$first_img = "$urldosite/img/branco.jpg";
 		}
   }
   return $first_img;

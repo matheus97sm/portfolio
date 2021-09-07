@@ -59,24 +59,26 @@
           </svg>
         </a>
         
-        <a href="https://wa.me/+5531993119471" target="_blank">
+        <!-- <a href="https://wa.me/" target="_blank">
           <svg width="32" height="32" viewBox="0 0 32 32">
             <use xlink:href="#whatsapp"></use>
           </svg>
-        </a>
+        </a> -->
       </div>
 
       <a href="<?=site_url()?>" class="header-logo">
         <img src="<?=get_template_directory_URI()?>/img/src/logo.svg'" alt="Matheus Fonseca - Desenvolvedor Web" />
       </a>
 
-      <div class="menu-hamb">
+      <div class="menu-hamb" data-menu="button">
         <span></span>
       </div>
     </div>
 
-    <nav class="menu">
+    <nav class="menu" data-menu="menu">
       <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu' => 'MenuTopo', 'menu_class' => 'nav-menu', 'menu_id' => 'primary-menu' ) ); ?>
     </nav>
   </header>
+
+  <div class="mouse-dot"></div>
   

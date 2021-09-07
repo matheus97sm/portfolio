@@ -15,6 +15,8 @@ export default function projetosSlider() {
 
   controls.forEach((control, index) => {
     control.addEventListener('click', e => {
+      e.preventDefault();
+      
       if (index === 0) {
         const newActualProject = projetoInfo.actualProject === 0 ? projetoInfo.actualProject : projetoInfo.actualProject - 1;
 

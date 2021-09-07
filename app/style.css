@@ -55,11 +55,33 @@ li {
   position: fixed;
   top: 0;
   left: 0;
+  display: flex;
+  align-items: flex-end;
   width: 100vw;
   height: 100vh;
+  background-color: #131313;
   opacity: 0;
   visibility: hidden;
-  z-index: 999; }
+  z-index: -1;
+  transition: 2s opacity, 2s visibility;
+  cursor: none; }
+  .menu.active {
+    opacity: 1;
+    visibility: visible; }
+    .menu.active ul a {
+      transform: translate3d(0, 0, 0);
+      opacity: 1; }
+  .menu ul a {
+    display: block;
+    color: #fff;
+    font-size: 94px;
+    font-weight: bold;
+    line-height: 80px;
+    cursor: none;
+    transform: translate3d(32px, 0, 0);
+    opacity: 0;
+    transition: 1.5s transform, 1.5s opacity;
+    transition-timing-function: ease-out; }
 
 .menu-hamb {
   padding: 16px 8px;
@@ -70,7 +92,7 @@ li {
     width: 32px;
     height: 3px;
     background-color: #fff;
-    transition: 1s transform; }
+    transition: 1s transform, 1s width; }
   .menu-hamb::after {
     content: '';
     width: 60%;
@@ -79,7 +101,26 @@ li {
   .menu-hamb.active span {
     transform: translate3d(0, 4px, 0) rotate(-45deg); }
   .menu-hamb.active::after {
+    width: 100%;
     transform: translate3d(0, -5px, 0) rotate(45deg); }
+
+.mouse-dot {
+  position: fixed;
+  width: 32px;
+  height: 32px;
+  background-color: #fff;
+  border-radius: 50%;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate3d(-50%, -50%, 0);
+  transition: 1s opacity, 1s visibility;
+  transition-timing-function: ease-out;
+  mix-blend-mode: exclusion;
+  pointer-events: none; }
+  .mouse-dot.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 9999; }
 
 .home-banner {
   position: relative;
@@ -88,8 +129,8 @@ li {
   overflow: hidden;
   background: linear-gradient(17deg, #171129 0%, #17113A 9%, #171154 18%, #131313 22%, #131313 38%, #1A000E 42%, #240014 49%, #51002C 58%, #000D1A 62%, #001D3A 69%, #002B57 78%, #13001A 82%, #22002E 89%, #43005B 100%) 0% 0% no-repeat;
   background-position: 0% 100%;
-  background-size: 2000% 2000%;
-  transition: 4s background-position; }
+  background-size: 550% 550%;
+  transition: 2s background-position ease-out; }
 
 .home-banner-content {
   position: absolute;
@@ -108,7 +149,7 @@ li {
   justify-items: flex-end;
   gap: 12px;
   transform: translate3d(0, -50%, 0);
-  z-index: 999; }
+  z-index: 990; }
 
 .banner-control-wrapper {
   display: flex;
@@ -162,6 +203,22 @@ li {
     height: 16px; }
   .banner-control-wrapper:hover .banner-control-dot::before, .banner-control-wrapper.active .banner-control-dot::before {
     width: 32px; }
+
+@media screen and (max-width: 1050px) {
+  .banner-control {
+    left: 50%;
+    right: unset;
+    top: unset;
+    bottom: 18px;
+    display: grid;
+    justify-items: flex-end;
+    grid-template-columns: repeat(5, 32px);
+    transform: translate3d(-50%, 0, 0);
+    z-index: 990; }
+    .banner-control .banner-control-dot::before {
+      display: none; }
+  .banner-control-wrapper .banner-control-name {
+    display: none; } }
 
 .banner-welcome .container {
   padding-bottom: 140px;
@@ -458,8 +515,78 @@ li {
       transition: 1.5s opacity, 1.5s visibility, 1.5s transform; }
 
 .banner-blog {
+  position: relative;
   opacity: 0;
-  visibility: hidden; }
+  visibility: hidden;
+  z-index: 1; }
+  .banner-blog .container {
+    display: flex;
+    align-items: center; }
+  .banner-blog .banner-blog-wrapper {
+    position: relative;
+    width: 100%; }
+    .banner-blog .banner-blog-wrapper .blog-item {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      display: grid;
+      align-items: center;
+      gap: 32px;
+      grid-template-columns: 380px minmax(auto, 400px);
+      transform: translate3d(0, -50%, 0);
+      opacity: 0;
+      visibility: hidden;
+      transition: .3s opacity, .3s visibility; }
+      .banner-blog .banner-blog-wrapper .blog-item.active {
+        opacity: 1;
+        visibility: visible; }
+      .banner-blog .banner-blog-wrapper .blog-item .blog-item-img img {
+        width: 380px;
+        height: 240px;
+        object-fit: cover; }
+      .banner-blog .banner-blog-wrapper .blog-item .blog-item-text h2 {
+        color: #8CACCC;
+        font-size: 46px;
+        font-weight: bolder; }
+      .banner-blog .banner-blog-wrapper .blog-item .blog-item-text p {
+        color: #8CACCC;
+        margin-bottom: 32px; }
+      .banner-blog .banner-blog-wrapper .blog-item .blog-item-text a {
+        display: flex;
+        align-items: center;
+        color: #fff; }
+        .banner-blog .banner-blog-wrapper .blog-item .blog-item-text a img {
+          margin-left: 16px;
+          width: 42px;
+          transition: .5s transform ease-out; }
+        .banner-blog .banner-blog-wrapper .blog-item .blog-item-text a:hover img {
+          transform: translate3d(16px, 0, 0); }
+    .banner-blog .banner-blog-wrapper .banner-blog-controls {
+      position: absolute;
+      top: calc(50% + 160px);
+      left: 123px;
+      transform: translate3d(0, -50%, 0); }
+      .banner-blog .banner-blog-wrapper .banner-blog-controls button {
+        background-color: transparent;
+        padding: 8px 24px;
+        border: none;
+        cursor: pointer; }
+        .banner-blog .banner-blog-wrapper .banner-blog-controls button:hover {
+          opacity: 0.8; }
+  .banner-blog .blog-img-wrapper {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; }
+    .banner-blog .blog-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.2;
+      filter: blur(3px);
+      animation: 20s imgBouncing infinite ease-in-out; }
   .banner-blog.active {
     opacity: 1;
     visibility: visible;
@@ -468,11 +595,66 @@ li {
   .banner-blog.inactive {
     opacity: 0;
     visibility: hidden;
+    pointer-events: none;
     transition: 3s opacity, 3s visibility; }
+
+@keyframes imgBouncing {
+  0%, 100% {
+    transform: scale(1); }
+  45%, 55% {
+    transform: scale(1.1); } }
 
 .banner-contato {
   opacity: 0;
   visibility: hidden; }
+  .banner-contato .container {
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 96px; }
+  .banner-contato .banner-contato-wrapper {
+    width: 100%;
+    max-width: 480px; }
+    .banner-contato .banner-contato-wrapper h2 {
+      color: #CCAFD6;
+      font-size: 64px; }
+    .banner-contato .banner-contato-wrapper a {
+      color: #CCAFD6; }
+    .banner-contato .banner-contato-wrapper form {
+      display: grid;
+      gap: 8px;
+      margin-top: 64px; }
+      .banner-contato .banner-contato-wrapper form input:not([type="submit"]),
+      .banner-contato .banner-contato-wrapper form textarea {
+        width: 100%;
+        height: 33px;
+        padding: 8px 0;
+        border: none;
+        border-bottom: 1px solid #CCAFD6;
+        background-color: transparent;
+        color: #CCAFD6; }
+        .banner-contato .banner-contato-wrapper form input:not([type="submit"])::placeholder,
+        .banner-contato .banner-contato-wrapper form textarea::placeholder {
+          color: #CCAFD6;
+          opacity: 0.8; }
+      .banner-contato .banner-contato-wrapper form input[type="submit"] {
+        padding: 4px 16px;
+        justify-self: flex-end;
+        background-color: #CCAFD6;
+        border: 2px solid #CCAFD6;
+        color: #13001A;
+        font-weight: bold;
+        cursor: pointer;
+        transition: .3s background-color, .3s color; }
+        .banner-contato .banner-contato-wrapper form input[type="submit"]:hover {
+          background-color: #13001A;
+          color: #fff; }
+      .banner-contato .banner-contato-wrapper form .wpcf7-not-valid-tip {
+        color: #f7d843;
+        font-size: 12px;
+        margin-top: 4px; }
+      .banner-contato .banner-contato-wrapper form .wpcf7-response-output {
+        color: #fff;
+        margin: 0; }
   .banner-contato.active {
     opacity: 1;
     visibility: visible;

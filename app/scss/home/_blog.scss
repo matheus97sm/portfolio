@@ -1,6 +1,113 @@
 .banner-blog {
+  position: relative;
   opacity: 0;
   visibility: hidden;
+  z-index: 1;
+
+  .container {
+    display: flex;
+    align-items: center;
+  }
+
+  .banner-blog-wrapper {
+    position: relative;
+    width: 100%;
+
+    .blog-item {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      display: grid;
+      align-items: center;
+      gap: 32px;
+      grid-template-columns: 380px minmax(auto, 400px);
+      transform: translate3d(0, -50%, 0);
+      opacity: 0;
+      visibility: hidden;
+      transition: .3s opacity, .3s visibility;
+
+      &.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .blog-item-img {
+        img {
+          width: 380px;
+          height: 240px;
+          object-fit: cover;
+        }
+      }
+
+      .blog-item-text {
+        h2 {
+          color: #8CACCC;
+          font-size: 46px;
+          font-weight: bolder;
+        }
+
+        p {
+          color: #8CACCC;
+          margin-bottom: 32px;
+        }
+
+        a {
+          display: flex;
+          align-items: center;
+          color: #fff;
+    
+          img {
+            margin-left: 16px;
+            width: 42px;
+            transition: .5s transform ease-out;
+          }
+    
+          &:hover {
+            img {
+              transform: translate3d(16px, 0, 0);
+            }
+          }
+        }
+      }
+    }
+
+    .banner-blog-controls {
+      position: absolute;
+      top: calc(50% + 160px);
+      left: 123px;
+      transform: translate3d(0, -50%, 0);
+
+      button {
+        background-color: transparent;
+        padding: 8px 24px;
+        border: none;
+        cursor: pointer;
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+
+  .blog-img-wrapper {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.2;
+      filter: blur(3px);
+
+      animation: 20s imgBouncing infinite ease-in-out;
+    }
+  }
 
   &.active {
     opacity: 1;
@@ -12,6 +119,17 @@
   &.inactive {
     opacity: 0;
     visibility: hidden;
+    pointer-events: none;
     transition: 3s opacity, 3s visibility;
+  }
+}
+
+@keyframes imgBouncing {
+  0% , 100%{
+    transform: scale(1);
+  }
+
+  45%, 55% {
+    transform: scale(1.1);
   }
 }

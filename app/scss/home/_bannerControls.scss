@@ -6,7 +6,7 @@
   justify-items: flex-end;
   gap: 12px;
   transform: translate3d(0, -50%, 0);
-  z-index: 999;
+  z-index: 990;
 }
 
 .banner-control-wrapper {
@@ -79,5 +79,27 @@
         width: 32px;
       }
     }
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .banner-control {
+    left: 50%;
+    right: unset;
+    top: unset;
+    bottom: 18px;
+    display: grid;
+    justify-items: flex-end;
+    grid-template-columns: repeat(5, 32px);
+    transform: translate3d(-50%, 0, 0);
+    z-index: 990;
+
+    .banner-control-dot::before {
+      display: none;
+    }
+  }
+
+  .banner-control-wrapper .banner-control-name {
+    display: none;
   }
 }

@@ -22,9 +22,9 @@
     #43005B 100%
   ) 0% 0% no-repeat;
   background-position: 0% 100%;
-  background-size: 2000% 2000%;
+  background-size: 550% 550%;
 
-  transition: 4s background-position;
+  transition: 2s background-position ease-out;
 }
 
 .home-banner-content {
