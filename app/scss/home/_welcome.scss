@@ -93,6 +93,16 @@
   }
 }
 
+@media screen and (max-width: 1050px) {
+  .banner-welcome .container {
+    padding-bottom: 96px;
+
+    h1 {
+      font-size: 11vw;
+    }
+  }
+}
+
 @keyframes animateLine {
   0% {
     width: 0%;

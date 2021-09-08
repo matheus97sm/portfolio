@@ -31,4 +31,10 @@
   }
 }
 
+@media screen and (max-width: 1050px) {
+  .header-logo img {
+    height: 32px;
+  }
+}
+
 @import './menu';

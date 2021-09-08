@@ -39,5 +39,10 @@
   }
 }
 
-@import './bannerControls'
-;
+@media screen and (max-width: 1050px) {
+  .home-banner {
+    background-size: 650% 650%;
+  }
+}
+
+@import './bannerControls';

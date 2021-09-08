@@ -51,6 +51,10 @@ li {
     user-select: none;
     -webkit-user-drag: none; }
 
+@media screen and (max-width: 1050px) {
+  .header-logo img {
+    height: 32px; } }
+
 .menu {
   position: fixed;
   top: 0;
@@ -122,6 +126,13 @@ li {
     visibility: visible;
     z-index: 9999; }
 
+@media screen and (max-width: 1050px) {
+  .mouse-dot {
+    display: none; }
+  .menu ul a {
+    font-size: 24vw;
+    line-height: 21vw; } }
+
 .home-banner {
   position: relative;
   width: 100vw;
@@ -140,6 +151,10 @@ li {
   height: 100%; }
   .home-banner-content .container {
     height: 100%; }
+
+@media screen and (max-width: 1050px) {
+  .home-banner {
+    background-size: 650% 650%; } }
 
 .banner-control {
   position: absolute;
@@ -211,10 +226,9 @@ li {
     top: unset;
     bottom: 18px;
     display: grid;
-    justify-items: flex-end;
+    justify-items: center;
     grid-template-columns: repeat(5, 32px);
-    transform: translate3d(-50%, 0, 0);
-    z-index: 990; }
+    transform: translate3d(-50%, 0, 0); }
     .banner-control .banner-control-dot::before {
       display: none; }
   .banner-control-wrapper .banner-control-name {
@@ -282,6 +296,12 @@ li {
     transform: translate3d(0, 50%, 0);
     transition: 1.5s transform, 1.5s opacity;
     transition-timing-function: ease-out; }
+
+@media screen and (max-width: 1050px) {
+  .banner-welcome .container {
+    padding-bottom: 96px; }
+    .banner-welcome .container h1 {
+      font-size: 11vw; } }
 
 @keyframes animateLine {
   0% {
@@ -375,6 +395,32 @@ li {
     gap: 32px; }
     .banner-sobre .banner-sobre-logos img {
       height: 48px; }
+
+@media screen and (max-width: 1050px) {
+  .banner-sobre .container {
+    grid-template-columns: 1fr; }
+  .banner-sobre .banner-sobre-img {
+    position: absolute;
+    left: -15%;
+    top: 0; }
+    .banner-sobre .banner-sobre-img img {
+      width: 100%;
+      height: 100%; }
+  .banner-sobre .banner-sobre-txt {
+    position: absolute;
+    max-width: 90%;
+    right: 0;
+    bottom: 96px; }
+    .banner-sobre .banner-sobre-txt h1 {
+      font-size: 8vw; }
+    .banner-sobre .banner-sobre-txt p {
+      font-size: 14px; }
+  .banner-sobre .banner-sobre-logos {
+    right: 0;
+    bottom: 48px;
+    gap: 24px; }
+    .banner-sobre .banner-sobre-logos img {
+      height: 32px; } }
 
 .banner-projetos {
   opacity: 0;
@@ -513,6 +559,23 @@ li {
       transform: translate3d(0, 32px, 0);
       transition-timing-function: ease-out;
       transition: 1.5s opacity, 1.5s visibility, 1.5s transform; }
+
+@media screen and (max-width: 1050px) {
+  .banner-projetos .banner-projetos-wrapper {
+    grid-template-rows: 1fr 60vw minmax(90vw, 1fr); }
+  .banner-projetos .banner-projetos-items a img {
+    height: 60vw;
+    width: 90vw; }
+  .banner-projetos .banner-projetos-controls {
+    left: unset;
+    top: unset;
+    right: 0;
+    bottom: 48px;
+    transform: translate3d(0, 0, 0); }
+    .banner-projetos .banner-projetos-controls button {
+      padding: 4px 16px; }
+      .banner-projetos .banner-projetos-controls button img {
+        height: 24px; } }
 
 .banner-blog {
   position: relative;

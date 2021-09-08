@@ -109,3 +109,47 @@
     }
   }
 }
+
+@media screen and (max-width: 1050px) {
+  .banner-sobre {
+    .container {
+      grid-template-columns: 1fr;
+    }
+
+    .banner-sobre-img {
+      position: absolute;
+      left: -15%;
+      top: 0;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .banner-sobre-txt {
+      position: absolute;
+      max-width: 90%;
+      right: 0;
+      bottom: 96px;
+
+      h1 {
+        font-size: 8vw;
+      }
+
+      p {
+        font-size: 14px;
+      }
+    }
+
+    .banner-sobre-logos {
+      right: 0;
+      bottom: 48px;
+      gap: 24px;
+  
+      img {
+        height: 32px;
+      }
+    }
+  }
+}

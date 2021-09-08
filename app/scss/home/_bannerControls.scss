@@ -89,10 +89,9 @@
     top: unset;
     bottom: 18px;
     display: grid;
-    justify-items: flex-end;
+    justify-items: center;
     grid-template-columns: repeat(5, 32px);
     transform: translate3d(-50%, 0, 0);
-    z-index: 990;
 
     .banner-control-dot::before {
       display: none;

@@ -198,3 +198,34 @@
     }
   }
 }
+
+@media screen and (max-width: 1050px) {
+  .banner-projetos {  
+    .banner-projetos-wrapper {
+      grid-template-rows: 1fr 60vw minmax(90vw, 1fr);
+    }
+
+    .banner-projetos-items {
+      a img {
+        height: 60vw;
+        width: 90vw;
+      }
+    }
+
+    .banner-projetos-controls {
+      left: unset;
+      top: unset;
+      right: 0;
+      bottom: 48px;
+      transform: translate3d(0, 0, 0);
+
+      button {
+        padding: 4px 16px;
+
+        img {
+          height: 24px;
+        }
+      }
+    }
+  }
+}

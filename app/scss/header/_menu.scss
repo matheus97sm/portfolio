@@ -90,3 +90,14 @@
     z-index: 9999;
   }
 }
+
+@media screen and (max-width: 1050px) {
+  .mouse-dot {
+    display: none;
+  }
+
+  .menu ul a {
+    font-size: 24vw;
+    line-height: 21vw;
+  }
+}
