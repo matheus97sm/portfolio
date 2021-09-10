@@ -9,6 +9,8 @@
 get_header(); ?>
 
 <main class="home-banner">
+  <canvas id="moon"></canvas>
+
   <section class="banner-welcome home-banner-content inactive">
     <div class="container">
       <div class="banner-welcome-txt">

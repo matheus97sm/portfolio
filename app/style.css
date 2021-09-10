@@ -138,7 +138,7 @@ li {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background: linear-gradient(17deg, #171129 0%, #17113A 9%, #171154 18%, #131313 22%, #131313 38%, #1A000E 42%, #240014 49%, #51002C 58%, #000D1A 62%, #001D3A 69%, #002B57 78%, #13001A 82%, #22002E 89%, #43005B 100%) 0% 0% no-repeat;
+  background: linear-gradient(17deg, #000 0%, #000 9%, #131313 18%, #131313 22%, #131313 38%, #1A000E 42%, #240014 49%, #51002C 58%, #000D1A 62%, #001D3A 69%, #002B57 78%, #13001A 82%, #22002E 89%, #43005B 100%) 0% 0% no-repeat;
   background-position: 0% 100%;
   background-size: 550% 550%;
   transition: 2s background-position ease-out; }
@@ -240,7 +240,7 @@ li {
   align-items: flex-end; }
   .banner-welcome .container h1 {
     position: relative;
-    color: #ACA7DF;
+    color: #fff;
     font-size: 84px;
     user-select: none; }
     .banner-welcome .container h1::before {
@@ -250,7 +250,7 @@ li {
       left: 0;
       width: 0;
       height: 2px;
-      background-color: #ACA7DF;
+      background-color: #fff;
       transform: translate3d(0, -50%, 0); }
     .banner-welcome .container h1 > span {
       display: block;
@@ -263,7 +263,7 @@ li {
       .banner-welcome .container h1 > span:nth-of-type(2) span {
         transform: translate3d(0, -100%, 0); }
   .banner-welcome .container p {
-    color: #665DBB;
+    color: #9F9F9F;
     max-width: 480px;
     opacity: 0;
     transform: translate3d(0, 50%, 0);
@@ -296,6 +296,11 @@ li {
     transform: translate3d(0, 50%, 0);
     transition: 1.5s transform, 1.5s opacity;
     transition-timing-function: ease-out; }
+
+#moon {
+  position: fixed;
+  top: 0;
+  left: 0; }
 
 @media screen and (max-width: 1050px) {
   .banner-welcome .container {
