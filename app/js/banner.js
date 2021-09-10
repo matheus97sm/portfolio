@@ -12,6 +12,13 @@ export default function banner() {
   
   if (!bannersContent[0]) return;
 
+  if (bannersContent.length === 1) {
+    bannersContent[0].classList.remove('inactive');
+    bannersContent[0].classList.add('active');
+    
+    return;
+  }
+
   bannersContent[0].classList.remove('inactive');
   bannersContent[0].classList.add('active');
   bannerControls[0].classList.add('active');

@@ -1,0 +1,21 @@
+.projeto-inside-img {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 44vh;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, .6));
+  }
+
+  img {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+  }
+}

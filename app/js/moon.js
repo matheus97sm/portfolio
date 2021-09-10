@@ -4,8 +4,6 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 import moonImgTexture from '../../img/src/moon.jpg';
 
-console.log(moonImgTexture)
-
 const canvas = document.querySelector('#moon');
 
 const scene = new THREE.Scene();

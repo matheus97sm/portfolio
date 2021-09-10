@@ -124,6 +124,60 @@
   }
 }
 
+@media screen and (max-width: 1050px) {
+  .banner-blog {  
+    .container {
+      display: flex;
+      align-items: center;
+    }
+  
+    .banner-blog-wrapper {
+      height: 100%;
+  
+      .blog-item {
+        display: flex;
+        flex-direction: column;
+  
+        .blog-item-img {
+          img {
+            width: 95vw;
+            height: 55vw;
+            object-fit: cover;
+          }
+        }
+  
+        .blog-item-text {
+          width: 100%;
+
+          h2 {
+            font-size: 9vw;
+          }
+  
+          p {
+            margin-bottom: 16px;
+          }
+        }
+      }
+  
+      .banner-blog-controls {
+        top: unset;
+        left: unset;
+        right: 0;
+        bottom: 48px;
+        transform: translate3d(0, 0, 0);
+
+        button {
+          padding: 4px 16px;
+  
+          img {
+            height: 24px;
+          }
+        }
+      }
+    }
+  }
+}
+
 @keyframes imgBouncing {
   0% , 100%{
     transform: scale(1);

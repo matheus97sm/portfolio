@@ -21,6 +21,10 @@
     "@babel/core": "^7.5.4",
     "@babel/polyfill": "^7.8.7",
     "@babel/preset-env": "^7.8.7",
+    "gsap": "^3.7.1",
+    "imports-loader": "^3.0.0",
+    "install": "^0.13.0",
+    "scrollmagic": "^2.0.8",
     "three": "^0.132.2",
     "tween": "^0.9.0"
   },

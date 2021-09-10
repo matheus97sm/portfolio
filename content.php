@@ -10,10 +10,14 @@
  */
 ?>
 
-<? if (is_single()) { ?>
+<? if (is_single() && get_post_type() === 'portfolios') { ?>
 	
-    //Codigo dentro do post
+<?php include 'projetos-inside.php'; ?>
     
+<? } else if (is_single()) { ?>
+
+blog
+
 <? } else { ?>
 
 	//Codigo fora do post
