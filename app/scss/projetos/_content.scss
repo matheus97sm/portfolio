@@ -4,5 +4,47 @@
 
   .container {
     max-width: 950px;
+    padding-right: 190px;
+
+    h2 {
+      margin: 2rem 0 1rem;
+      color: #555;
+      line-height: 58px;
+      font-size: 52px;
+    }
+
+    p, li {
+      color: #555;
+    }
+
+    p {
+      margin: 1rem 0;
+    }
+
+    a {
+      color: #51002C;
+      text-decoration: underline;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      margin: 2rem 0;
+    }
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .projeto-inside-content {
+    padding: 64px 0;
+
+    .container {
+      padding-right: 0;
+
+      h2 {
+        font-size: 10vw;
+        line-height: 10.5vw;
+      }
+    }
   }
 }

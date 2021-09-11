@@ -28,7 +28,7 @@ export default function banner() {
   }, 3000);
 
   if (window.innerWidth > 768) {
-    window.addEventListener('mousewheel', e => {
+    window.addEventListener('wheel', e => {
       if (!bannerInfo.cooldown) {
         const newActualBanner = verifyWheelScroll(
           e.deltaY,
