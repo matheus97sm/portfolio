@@ -3,6 +3,7 @@
   width: 100vw;
   height: 100vh;
   z-index: 1;
+  overflow: hidden;
 
   &.blog-inside {
     &::after {
@@ -35,7 +36,7 @@
     left: 50%;
     color: #fff;
     text-align: center;
-    font-size: 10vw;
+    font-size: 6vw;
     font-weight: bolder;
     text-transform: lowercase;
     transform: translate3d(-50%, -50%, 0);
@@ -46,5 +47,13 @@
     width: 100vw;
     height: 100vh;
     object-fit: cover;
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .projeto-inside-img {  
+    h1 {
+      font-size: 10vw;
+    }
   }
 }
